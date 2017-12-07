@@ -1,0 +1,7 @@
+<!--index.wxml-->
+<view class="container">
+  <view  bindtap="bindViewTap" class="userinfo">
+    <image class="star-img" src="{{data.imgurl}}" background-size="cover"></image>
+    <text class="star-name">{{data.name}}</text>
+  </view>
+</view>

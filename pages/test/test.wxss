@@ -1,0 +1,74 @@
+/* test.wxss */
+@import "../common/lib/weui.wxss";
+
+.radio{
+  margin-right: 20rpx;
+}
+
+.slide-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.swiper {
+  margin-top: 50rpx;
+  width: 750rpx;
+  height: 500rpx;
+}
+
+
+
+.star-name {
+  margin-top: 20rpx;
+}
+
+.group {
+  margin-top: 100rpx;
+  display: flex;
+  justify-content: center;
+  width: 750rpx;
+  text-align: center;
+}
+
+.checkbox_group {
+  height: 200rpx;
+  width: 380rpx;
+}
+
+
+
+#check_view12{
+  width: 380rpx;
+  display: flex;
+}
+#check_view34{
+  margin-top: 30rpx;
+  width: 380rpx;
+  display: flex;
+}
+
+
+.button{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.aon{
+  background-color: #ff0000;
+position: absolute;
+white-space:nowrap;/* 防止向下换行*/
+animation-timing-function: linear;
+animation-fill-mode: none;
+}
+.doommview{
+  z-index: 3;
+  height: 100rpx;
+  width: 100%;
+  position: absolute;
+}
+
+@keyframes first{
+  from{left: 100%; }
+  to{left: -100%;}
+}
