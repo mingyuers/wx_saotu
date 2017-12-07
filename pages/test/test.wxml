@@ -17,8 +17,8 @@
       </swiper-item>
     </block>
   </swiper>
-
-  <view class="weui-cells weui-cells_after-title">
+  <label style="font-size:16px;margin-left:30rpx">请选择该图来自于哪个明星</label>
+  <view class="weui-cells weui-cells_after-title" style='margin-top:5rpx'>
     <radio-group bindchange="radioChange">
       <label class="weui-cell weui-check__label" wx:for="{{guess_items}}">
         <view class="weui-cell__hd">

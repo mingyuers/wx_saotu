@@ -17,38 +17,6 @@
   height: 500rpx;
 }
 
-
-
-.star-name {
-  margin-top: 20rpx;
-}
-
-.group {
-  margin-top: 100rpx;
-  display: flex;
-  justify-content: center;
-  width: 750rpx;
-  text-align: center;
-}
-
-.checkbox_group {
-  height: 200rpx;
-  width: 380rpx;
-}
-
-
-
-#check_view12{
-  width: 380rpx;
-  display: flex;
-}
-#check_view34{
-  margin-top: 30rpx;
-  width: 380rpx;
-  display: flex;
-}
-
-
 .button{
   position: absolute;
   bottom: 0;

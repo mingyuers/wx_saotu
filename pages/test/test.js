@@ -53,14 +53,15 @@ Page({
   refreshCheckBoxData: function (current_page) {
     var that = this
     var new_data = (that.data.imgData)[current_page]
-    var new_guess_items = new_data.random_star
-    new_guess_items.push(new_data.name)
-    new_guess_items = [
-      { name: new_guess_items[0], value: new_guess_items[0], checked: false },
-      { name: new_guess_items[1], value: new_guess_items[1], checked: false },
-      { name: new_guess_items[2], value: new_guess_items[2], checked: false },
-      { name: new_guess_items[3], value: new_guess_items[3], checked: false }
+    var guess_items = new_data.random_star
+    guess_items.push(new_data.name)
+    var new_guess_items = [
+      { name: guess_items[0], value: guess_items[0], checked: false },
+      { name: guess_items[1], value: guess_items[1], checked: false },
+      { name: guess_items[2], value: guess_items[2], checked: false }
     ]
+    new_guess_items.splice(Math.floor(Math.random() * 4), 0,
+      { name: guess_items[3], value: guess_items[3], checked: false })
     that.setData({
       guess_items: new_guess_items,
       current_name: new_data.name
@@ -74,10 +75,16 @@ Page({
       console.log('答对了');
       wx.showToast({
         title: '答对了',
+        duration: 700
       })
       var that = this
       that.setData({
         currentTab: that.data.currentTab + 1
+      })
+    } else {
+      wx.showToast({
+        title: '答错了',
+        duration: 700
       })
     }
   },
