@@ -14,7 +14,7 @@
 .swiper {
   margin-top: 50rpx;
   width: 750rpx;
-  height: 500rpx;
+  height: 900rpx;
 }
 
 .button{

@@ -12,13 +12,13 @@
         <view class="slide-image">
           <image bindtap='previewImage' class="show_img" wx:if="{{item.type=='jpg'}}" src="{{item.imgurl}}" mode="aspectFit" background-size="contain" />
           <video wx:if="{{item.type=='mp4'}}" src="{{item.imgurl}}"></video>
-          <!-- <text class="star-name">{{item.name}}</text> -->
+          <text class="star-name">{{item.name}}</text>
         </view>
       </swiper-item>
     </block>
   </swiper>
-  <label style="font-size:16px;margin-left:30rpx">请选择该图来自于哪个明星</label>
-  <view class="weui-cells weui-cells_after-title" style='margin-top:5rpx'>
+  <!-- <label style="font-size:16px;margin-left:30rpx">请选择该图来自于哪个明星</label> -->
+  <!-- <view class="weui-cells weui-cells_after-title" style='margin-top:5rpx'>
     <radio-group bindchange="radioChange">
       <label class="weui-cell weui-check__label" wx:for="{{guess_items}}">
         <view class="weui-cell__hd">
@@ -30,5 +30,6 @@
   </view>
   <view class="button">
     <button bindtap="bindbt">弹一个小苹果</button>
-  </view>
+  </view> -->
+<ad unit-id="adunit-8e9ba0261828546b"></ad>
 </view>

@@ -1,8 +1,6 @@
 var page = undefined;
 Page({
   data: {
-    guess_items: [
-    ],
     imgData: [
     ],
     indicatorDots: false,
@@ -49,45 +47,6 @@ Page({
     })
     //    console.log(old_data)
   },
-
-  refreshCheckBoxData: function (current_page) {
-    var that = this
-    var new_data = (that.data.imgData)[current_page]
-    var guess_items = new_data.random_star
-    guess_items.push(new_data.name)
-    var new_guess_items = [
-      { name: guess_items[0], value: guess_items[0], checked: false },
-      { name: guess_items[1], value: guess_items[1], checked: false },
-      { name: guess_items[2], value: guess_items[2], checked: false }
-    ]
-    new_guess_items.splice(Math.floor(Math.random() * 4), 0,
-      { name: guess_items[3], value: guess_items[3], checked: false })
-    that.setData({
-      guess_items: new_guess_items,
-      current_name: new_data.name
-    })
-    console.log(that.data.guess_items)
-
-  },
-  radioChange: function (e) {
-    console.log('radio发生change事件，携带value值为：', e.detail.value)
-    if (e.detail.value == this.data.current_name) {
-      console.log('答对了');
-      wx.showToast({
-        title: '答对了',
-        duration: 700
-      })
-      var that = this
-      that.setData({
-        currentTab: that.data.currentTab + 1
-      })
-    } else {
-      wx.showToast({
-        title: '答错了',
-        duration: 700
-      })
-    }
-  },
   previewImage: function (e) {
     console.log(e)
     //var that = this
@@ -108,33 +67,3 @@ Page({
     })
   },
 })
-
-var doommList = [];
-var i = 0;
-class Doomm {
-  constructor(text, top, time, color) {
-    console.log(top + '===' + time)
-    this.text = text + i;
-    this.top = 0;
-    this.time = time;
-    this.color = color;
-    this.display = true;
-    let that = this;
-    this.id = i++;
-    // setTimeout(function () {
-    //   doommList.splice(doommList.indexOf(that), 1);
-    //   page.setData({
-    //     doommData: doommList
-    //   })
-    // }, this.time * 1000)
-  }
-}
-function getRandomColor() {
-  let rgb = []
-  for (let i = 0; i < 3; ++i) {
-    let color = Math.floor(Math.random() * 256).toString(16)
-    color = color.length == 1 ? '0' + color : color
-    rgb.push(color)
-  }
-  return '#' + rgb.join('')
-}
