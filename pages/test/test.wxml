@@ -17,19 +17,13 @@
       </swiper-item>
     </block>
   </swiper>
-  <!-- <label style="font-size:16px;margin-left:30rpx">请选择该图来自于哪个明星</label> -->
-  <!-- <view class="weui-cells weui-cells_after-title" style='margin-top:5rpx'>
-    <radio-group bindchange="radioChange">
-      <label class="weui-cell weui-check__label" wx:for="{{guess_items}}">
-        <view class="weui-cell__hd">
-          <radio value="{{item.value}}" checked='{{item.checked}}' />
-        </view>
-        <view class="weui-cell__bd">{{item.name}}</view>
-      </label>
-    </radio-group>
+  <view class='btn-list'>
+    <view style='width:450rpx;background:#FF9900'>
+      <button class='bottomBtn1' bindtap='saveImg' style='color:#ffffff;width:450rpx;background:#FF9900;border: none'>保存到相册</button>
+    </view>
+    <view style='width:300rpx;background:#ff6666'>
+      <button class='bottomBtn2' open-type="share" style='color:#ffffff;width:300rpx;background:#ff6666;border-radius:0'>分享</button>
+    </view>
   </view>
-  <view class="button">
-    <button bindtap="bindbt">弹一个小苹果</button>
-  </view> -->
-<ad unit-id="adunit-8e9ba0261828546b"></ad>
+  <ad unit-id="adunit-8e9ba0261828546b"></ad>
 </view>

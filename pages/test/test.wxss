@@ -1,7 +1,7 @@
 /* test.wxss */
 @import "../common/lib/weui.wxss";
 
-.radio{
+.radio {
   margin-right: 20rpx;
 }
 
@@ -17,26 +17,36 @@
   height: 900rpx;
 }
 
-.button{
+.button {
   position: absolute;
   bottom: 0;
   width: 100%;
 }
-.aon{
-  background-color: #ff0000;
-position: absolute;
-white-space:nowrap;/* 防止向下换行*/
-animation-timing-function: linear;
-animation-fill-mode: none;
-}
-.doommview{
-  z-index: 3;
-  height: 100rpx;
-  width: 100%;
-  position: absolute;
+
+.btn-list {
+  display: flex;
 }
 
-@keyframes first{
-  from{left: 100%; }
-  to{left: -100%;}
+.bottomBtn1 {
+  
+}
+.bottomBtn1::after{
+  border:1px solid #FF9900;
+}
+
+.bottomBtn2 {
+  
+}
+.bottomBtn2::after{
+  border:1px solid #ff6666;
+}
+
+@keyframes first {
+  from {
+    left: 100%;
+  }
+
+  to {
+    left: -100%;
+  }
 }
