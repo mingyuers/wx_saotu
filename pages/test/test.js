@@ -14,16 +14,16 @@ Page({
       desc: 'ins照片墙',
       path: '/pages/test/test'
     },
-    doommData: []
   },
   onLoad: function() {
     page = this;
-    this.add_one_data()
+    this.add_one_data();
+    this.showTips();
   },
   changeEvent: function(e) {
     var current_page = e.detail.current + 1;
     var totle_page = this.data.imgData.length;
-    console.log(current_page + "```" + totle_page)
+    console.log(current_page + "-" + totle_page)
     if ((totle_page - current_page) <= 5) {
       this.add_one_data()
     }
@@ -54,6 +54,11 @@ Page({
     wx.previewImage({
       current: url, // 当前显示图片的http链接  
       urls: [url] // 需要预览的图片http链接列表  
+    })
+  },
+  closeTips: function(e) {
+    this.setData({
+      shouldShowTips: false
     })
   },
   onShareAppMessage: function() {
@@ -130,31 +135,42 @@ Page({
         console.log(res)
       }
     })
-  }
-  // saveImg:function(e) {
-  //   var imgurl = this.data.imgData[this.data.currentTab].imgurl
-  //   wx.getImageInfo({
-  //     src: imgurl,
-  //     success: function (res) {
-  //       console.log(res.path)
-  //       wx.getSetting({
-  //         success(res) {
-  //           if (!res.authSetting['scope.writePhotosAlbum']) {
-  //             wx.authorize({
-  //               scope: 'scope.writePhotosAlbum',
-  //               success() {
-  //                 wx.saveImageToPhotosAlbum({
-  //                   filePath: res.path,
-  //                   success(result) {
-  //                     console.log(result)
-  //                   }
-  //                 })
-  //               }
-  //             })
-  //           }
-  //         }
-  //       })
-  //     }
-  //   })
-  // }
+  },
+
+  showTips: function() {
+    var shouldShowTips = false;
+    var now = Math.round(new Date().getTime());
+    var nextTips = wx.getStorageSync('nextTips');
+    console.log('nextTips:' + nextTips);
+    //提示间隔时间15天
+    var dtime = 15 * 24 * 3600 * 1000;
+    if (!nextTips) {
+      shouldShowTips = true;
+      wx.setStorage({
+        key: "nextTips",
+        data: now + dtime
+      })
+      // wx.setStorageSync('nextTips', now + dtime);
+    } else {
+      if (nextTips < now) {
+        shouldShowTips = true;
+        wx.setStorage({
+          key: "nextTips",
+          data: now + dtime
+        })
+        // wx.setStorageSync('nextTips', now + dtime);
+      }
+    }
+    // this.setData({
+    //   shouldShowTips: shouldShowTips
+    // })
+    if (shouldShowTips) {
+      wx.showModal({
+        title: 'Tips',
+        content: '右划浏览下一张~',
+        showCancel: false,
+      })
+    }
+    console.log("shouldShowTips:" + shouldShowTips);
+  },
 })

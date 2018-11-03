@@ -14,7 +14,7 @@
 .swiper {
   margin-top: 50rpx;
   width: 750rpx;
-  height: 900rpx;
+  height: 800rpx;
 }
 
 .button {
@@ -28,17 +28,17 @@
 }
 
 .bottomBtn1 {
-  
 }
-.bottomBtn1::after{
-  border:1px solid #FF9900;
+
+.bottomBtn1::after {
+  border: 1px solid #f90;
 }
 
 .bottomBtn2 {
-  
 }
-.bottomBtn2::after{
-  border:1px solid #ff6666;
+
+.bottomBtn2::after {
+  border: 1px solid #f66;
 }
 
 @keyframes first {
@@ -49,4 +49,30 @@
   to {
     left: -100%;
   }
+}
+
+.tipsView {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+  height: 100%;
+  width: 750rpx;
+}
+
+.tipsBackground {
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+  height: 100%;
+  width: 100%;
+  background: #f1f1f1;
+  opacity: 0.8;
+}
+
+.tipsImage {
+  margin-top: 200rpx;
 }

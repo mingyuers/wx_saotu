@@ -1,13 +1,7 @@
 <view class="section">
-  <view class="doommview">
-    <block wx:for="{{doommData}}" wx:key="id">
-      <text wx:if="{{item.display}}" class="aon" style="animation: first {{item.time}}s linear forwards;top:{{item.top}}%;color:{{item.color}};">
-            {{item.text}}
-        </text>
-    </block>
-  </view>
+
   <swiper current="{{currentTab}}" class="swiper" circular="{{circular}}" indicator-dots="{{indicatorDots}}" bindchange="changeEvent" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-    <block wx:for="{{imgData}}">
+    <block wx:for="{{imgData}}" wx:key="id">
       <swiper-item>
         <view class="slide-image">
           <image bindtap='previewImage' class="show_img" wx:if="{{item.type=='jpg'}}" src="{{item.imgurl}}" mode="aspectFit" background-size="contain" />
@@ -17,6 +11,9 @@
       </swiper-item>
     </block>
   </swiper>
+
+
+<ad unit-id="adunit-8e9ba0261828546b"></ad>
   <view class='btn-list'>
     <view style='width:450rpx;background:#FF9900'>
       <button class='bottomBtn1' bindtap='saveImg' style='color:#ffffff;width:450rpx;background:#FF9900;border: none'>保存到相册</button>
@@ -25,5 +22,13 @@
       <button class='bottomBtn2' open-type="share" style='color:#ffffff;width:300rpx;background:#ff6666;border-radius:0'>分享</button>
     </view>
   </view>
-  <ad unit-id="adunit-8e9ba0261828546b"></ad>
+  
+
+</view>
+
+<view class='tipsView' style='display:none'>
+  <view class='tipsBackground'></view>
+
+  <image class='tipsImage' mode='aspectFill' bindtap='closeTips' src='http://qiniu.betteridea.cn/zhoudongyu/10632089_343707245807393_194584675_n.jpg'></image>
+
 </view>
